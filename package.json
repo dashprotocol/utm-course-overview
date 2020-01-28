@@ -1,7 +1,6 @@
 {
   "name": "coursecontent",
-  "version": "",
-  "description": "",
+  "description": "> Project description",
   "author": "John Roswell Cua",
   "license": "ISC",
   "engines": {
@@ -11,9 +10,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "start1": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p --progress"
+    "build": "webpack"
   },
   "dependencies": {
     "lodash": "^4.17.15",
@@ -29,9 +27,19 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
-  }
+    "webpack-cli": "^3.3.10"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roswell-cua/utm-course-overview.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/roswell-cua/utm-course-overview/issues"
+  },
+  "homepage": "https://github.com/roswell-cua/utm-course-overview#readme"
 }
