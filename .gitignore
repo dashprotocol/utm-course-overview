@@ -1,2 +1,5 @@
+##node##
 node_modules
+
+##webpack bundled file##
 client/dist/bundle.js
