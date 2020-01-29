@@ -3,11 +3,18 @@ import React from 'react';
 class App extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            data: []
+        }
     }
+
+
 
     render () {
         return (
-            <div>Working!!</div>
+            <div>
+                <h1>Hello World</h1>
+            </div>
         )
     }
 }
