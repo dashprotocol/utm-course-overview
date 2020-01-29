@@ -33,7 +33,8 @@ for (let i = 0; i < 100; i++) {
   sampleData.push({
     course: {
       course_name: faker.company.bs(),
-      sections: new Array(Math.floor(Math.random() * (15 - 5)) + 5).fill({
+      // sections: new Array(Math.floor(Math.random() * (15 - 5)) + 5).fill()
+      sections: Array.from({length: Math.floor(Math.random() * (15 - 5)) + 5}, () => ({
         section_name: faker.company.catchPhrase(),
         contents: [{
           content_title: faker.company.bs(),
@@ -42,7 +43,7 @@ for (let i = 0; i < 100; i++) {
           has_preview: Math.random() >= 0.5,
           vid_img: faker.image.imageUrl()
         }]
-      })
+      }))
     }
   })
 }
