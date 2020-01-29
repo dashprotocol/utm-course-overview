@@ -1,4 +1,4 @@
-# Project Name
+# utm-course-overview
 
 > Project description
 
