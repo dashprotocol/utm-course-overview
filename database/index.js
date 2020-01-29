@@ -38,8 +38,8 @@ for (let i = 0; i < 100; i++) {
         contents: [{
           content_title: faker.company.bs(),
           content_length: (Math.random() * 10),
-          is_vid: faker.Boolean(),
-          has_preview: faker.Boolean,
+          is_vid: faker.random.Boolean(),
+          has_preview: faker.random.Boolean(),
           vid_img: faker.image.imageUrl()
         }]
       })
