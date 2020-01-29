@@ -36,13 +36,13 @@ for (let i = 0; i < 100; i++) {
       // sections: new Array(Math.floor(Math.random() * (15 - 5)) + 5).fill()
       sections: Array.from({length: Math.floor(Math.random() * (15 - 5)) + 5}, () => ({
         section_name: faker.company.catchPhrase(),
-        contents: [{
+        contents: Array.from({length: Math.floor(Math.random() * 10)}, () => ({
           content_title: faker.company.bs(),
           content_length: (Math.random() * 10),
           is_vid: Math.random() >= 0.5,
           has_preview: Math.random() >= 0.5,
           vid_img: faker.image.imageUrl()
-        }]
+        }))
       }))
     }
   })
