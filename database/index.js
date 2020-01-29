@@ -48,3 +48,11 @@ for (let i = 0; i < 100; i++) {
 }
 
 Course.insertMany(sampleData);
+
+let readOne = (callback) => {
+  Course.findOne({}).exec((err, res) => {
+    callback(res)
+  });
+}
+
+module.exports.readOne = readOne;
