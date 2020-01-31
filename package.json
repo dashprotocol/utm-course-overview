@@ -15,7 +15,9 @@
     "seed": "node database/index.js"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "faker": "^4.1.0",
+    "i": "^0.3.6",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.8.10",
