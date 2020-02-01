@@ -10,6 +10,8 @@ class CollapseBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: this.props.data1,
+      test1: 'string',
       isToggleOn: true,
       isToggleOn1: true,
       isToggleOn2: true,
@@ -20,7 +22,7 @@ class CollapseBar extends React.Component {
   }
 
   handleClick() {
-    console.log(this.props.data1)
+    console.log(this.props.data1.course.course_name);
     this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
     }));
@@ -41,8 +43,9 @@ class CollapseBar extends React.Component {
 
   render() {
     return (
-      <div style={divStyle}>
-        <button onClick={this.handleClick}>Button1</button>
+      <div style={divStyle}> 
+        <div>Text goes here</div>
+        <button onClick={this.handleClick}>{this.state.test1}</button>
         <TestComponent willRender={this.state.isToggleOn} />
         <button onClick={this.handleClick1}>Button2</button>
         <TestComponent willRender={this.state.isToggleOn1} />
