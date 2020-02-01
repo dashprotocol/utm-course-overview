@@ -15,6 +15,7 @@
     "seed": "node database/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "i": "^0.3.6",

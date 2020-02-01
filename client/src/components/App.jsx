@@ -2,11 +2,12 @@ import React from 'react';
 import $ from 'jquery';
 import CollapseBar from './CollapseBar.jsx';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      course: {},
     };
   }
 
@@ -15,17 +16,20 @@ class App extends React.Component {
       type: 'GET',
       url: 'http://localhost:3000/test1',
       success: (data) => {
-        console.log(data);
-        this.setState({data: data});
+        this.setState({
+          course: data,
+        });
+        console.log(this.state.course);
       },
     });
   }
 
   render() {
+    const { course } = this.state;
     return (
       <div className="container">
         <h1>Accordion</h1>
-        <CollapseBar title="Header" />
+        <CollapseBar title="Header" data1={course} />
       </div>
     );
   }
