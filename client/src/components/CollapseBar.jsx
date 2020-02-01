@@ -44,13 +44,13 @@ class CollapseBar extends React.Component {
   render() {
     return (
       <div style={divStyle}> 
-        <div>Text goes here</div>
+        <p>Text goes here</p>
         <button onClick={this.handleClick}>{this.state.test1}</button>
         <TestComponent willRender={this.state.isToggleOn} />
-        <button onClick={this.handleClick1}>Button2</button>
+        {/* <button onClick={this.handleClick1}>Button2</button>
         <TestComponent willRender={this.state.isToggleOn1} />
         <button onClick={this.handleClick2}>Button3</button>
-        <TestComponent willRender={this.state.isToggleOn2} />
+        <TestComponent willRender={this.state.isToggleOn2} /> */}
       </div>
     );
   }
@@ -60,8 +60,8 @@ const TestComponent = (props) => {
   if (props.willRender) {
     return (
       <div className="sectionContent">
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p>Text goes here
+{/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. */}
         </p>
       </div>
     );

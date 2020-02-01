@@ -8,8 +8,15 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('CollapseBar', () => {
   it('should show text', () => {
-    const wrapper = shallow(<CollapseBar />);
-    const text = wrapper.find('div div');
+    const wrapper = shallow(<TestComponent />);
+    const text = wrapper.find('div p');
     expect(text.text()).toBe('Text goes here');
+  });
+  it('should hide text when a button is clicked', () => {
+    const wrapper = shallow(<TestComponent />);
+    const button = wrapper.find('button');
+    button.simulate('click');
+    const text = wrapper.find('div p');
+    expect(text.length).toBe(0);
   });
 });
