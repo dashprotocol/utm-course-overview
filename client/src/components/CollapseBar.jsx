@@ -13,8 +13,8 @@ class CollapseBar extends React.Component {
       isToggleOn2: true,
     };
     this.handleClick = this.handleClick.bind(this);
-    // this.handleClick1 = this.handleClick1.bind(this);
-    // this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick1 = this.handleClick1.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
   }
 
   handleClick() {
@@ -24,17 +24,17 @@ class CollapseBar extends React.Component {
     }));
   }
 
-  // handleClick1() {
-  //   this.setState((state) => ({
-  //     isToggleOn1: !state.isToggleOn1,
-  //   }));
-  // }
+  handleClick1() {
+    this.setState((state) => ({
+      isToggleOn1: !state.isToggleOn1,
+    }));
+  }
 
-  // handleClick2() {
-  //   this.setState((state) => ({
-  //     isToggleOn2: !state.isToggleOn2,
-  //   }));
-  // }
+  handleClick2() {
+    this.setState((state) => ({
+      isToggleOn2: !state.isToggleOn2,
+    }));
+  }
 
 
   render() {
@@ -46,12 +46,22 @@ class CollapseBar extends React.Component {
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </Content>
-        {/* <TestComponent willRender={this.state.isToggleOn} />  */}
-        {/* <button onClick={this.handleClick1}>Button2</button>
-        <TestComponent willRender={this.state.isToggleOn1} />
+        <button onClick={this.handleClick1}>Button2</button>
+        <Content open={this.state.isToggleOn1}>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </Content>
         <button onClick={this.handleClick2}>Button3</button>
-        <TestComponent willRender={this.state.isToggleOn2} /> */}
+        <Content open={this.state.isToggleOn2}>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </Content>
       </div>
     );
   }
