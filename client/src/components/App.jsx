@@ -2,7 +2,6 @@ import React from 'react';
 import $ from 'jquery';
 import axios from 'axios';
 import CollapseBar from './CollapseBar.jsx';
-import styled from 'styled-components';
 
 
 class App extends React.Component {
@@ -41,17 +40,10 @@ class App extends React.Component {
     const { course } = this.state;
     return (
       <div className="container">
-        <h1>Course content <ExpandButton>Expand All</ExpandButton></h1>
         <CollapseBar title="Header" data1={course} />
       </div>
     );
   }
 }
-
-const ExpandButton = styled.button`
-  border: none;
-  background-color: white;
-  float: right;
-`;
 
 export default App;
