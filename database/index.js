@@ -41,7 +41,7 @@ for (let i = 0; i < 100; i += 1) {
           content_length: (Math.random() * 10),
           is_vid: Math.random() >= 0.5,
           has_preview: Math.random() >= 0.5,
-          vid_img: faker.image.imageUrl(),
+          vid_img: faker.image.image(),
         })),
       })),
     },
