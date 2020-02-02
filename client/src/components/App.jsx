@@ -40,7 +40,7 @@ class App extends React.Component {
     const { course } = this.state;
     return (
       <div className="container">
-        <h1>Course content</h1>
+        <h1>Course content <button>Expand All</button></h1>
         <CollapseBar title="Header" data1={course} />
       </div>
     );

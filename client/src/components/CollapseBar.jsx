@@ -39,9 +39,9 @@ class CollapseBar extends React.Component {
 
   render() {
     return (
-      <div> 
+      <div>
         {/* <p>Text goes here</p> */}
-        <button onClick={this.handleClick}>Button1</button>
+        <Button onClick={this.handleClick}>Button1</Button>
         <Content open={this.state.isToggleOn}>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -50,13 +50,13 @@ class CollapseBar extends React.Component {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </Content>
-        <button onClick={this.handleClick1}>Button2</button>
+        <Button onClick={this.handleClick1}>Button2</Button>
         <Content open={this.state.isToggleOn1}>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </Content>
-        <button onClick={this.handleClick2}>Button3</button>
+        <Button onClick={this.handleClick2}>Button3</Button>
         <Content open={this.state.isToggleOn2}>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -79,6 +79,22 @@ const Content = styled.div`
   p {
     margin: 0;
   } 
+`;
+
+const Button = styled.button`
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition:background-color 0.3s linear;
+
+  :hover {
+    background-color: #ddd;
+  }
 `;
 
 export default CollapseBar;
