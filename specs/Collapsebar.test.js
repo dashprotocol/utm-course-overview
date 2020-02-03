@@ -13,7 +13,7 @@ describe('CollapseBar', () => {
     expect(text.text()).toBe('Text goes here');
   });
   it('should hide text when a button is clicked', () => {
-    const wrapper = shallow(<TestComponent />);
+    const wrapper = shallow(<CollapseBar />);
     const button = wrapper.find('button');
     button.simulate('click');
     const text = wrapper.find('div p');
