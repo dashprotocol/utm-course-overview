@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       course: [],
     };
+    this.getCourseData = this.getCourseData.bind(this);
   }
 
   componentDidMount() {
@@ -29,7 +30,6 @@ class App extends React.Component {
   getCourseData() {
     axios.get('http://localhost:3000/test1')
       .then((response) => {
-        console.log(response.data.course.course_name);
         this.setState({
           course: response.data,
         });
