@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import CourseContent from './CourseContent.jsx';
+
 
 const Button = styled.button`
   width: 100%;
@@ -41,13 +41,13 @@ const CollapseButtons = (props) => {
         <div>
           <Button>{name.section_name}</Button>
           <div>
-          <Content open={true}>
-            {name.contents.map((content) => {
-              return (
-                <p>{content.content_title}</p>
-              );
-            })}
-          </Content>
+            <Content open={true}>
+              {name.contents.map((content) => {
+                return (
+                  <p>{content.content_title}</p>
+                );
+              })}
+            </Content>
           </div>
         </div>
       );
