@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import CollapseButtons from './CollapseButtons.jsx';
+import CourseContent from './CourseContent.jsx';
 
 const Content = styled.div`
   border: 1px solid gray;
@@ -17,22 +18,6 @@ const Content = styled.div`
   } 
 `;
 
-const Button = styled.button`
-  width: 100%;
-  background-color: whitesmoke;
-  border: none;
-  outline: none;
-  text-align: left;
-  padding: 15px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition:background-color 0.3s linear;
-
-  :hover {
-    background-color: #ddd;
-  }
-`;
-
 const ExpandButton = styled.button`
   font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
   position: absolute;
@@ -42,7 +27,7 @@ const ExpandButton = styled.button`
   cursor: pointer;
 `;
 
-const CourseContent = styled.h1`
+const CourseContentHeader = styled.h1`
   margin: 0;
   display: inline-block;
   width: 100%;
@@ -56,7 +41,7 @@ class CollapseBar extends React.Component {
       course: '',
       test2: '',
       // test1: 'string1',
-      isToggleOn: false,
+      isToggleOn: true,
       isToggleOn1: false,
       isToggleOn2: false,
       isToggleAll: true,
@@ -87,14 +72,11 @@ class CollapseBar extends React.Component {
       .then((response) => {
         this.setState({
           course: response.data.course.sections,
-        }, () => {
-          console.log(this.state.course)
         });
       });
   }
 
   handleClick() {
-    // console.log(this.props.data1.course.course_name);
     this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
     }));
@@ -130,24 +112,19 @@ class CollapseBar extends React.Component {
     if (course === '') {
       return null;
     }
+    console.log(course)
     return (
       // <div>
-      //   <CourseContent>
-      //     Course content
-      //     <ExpandButton onClick={this.handleClickAll}>
-      //       {isToggleAll ? 'Expand All' : 'Collapse All'}
-      //     </ExpandButton>
-      //   </CourseContent>
       //   {/* <p>Text goes here</p> */}
       //   <Button onClick={this.handleClick}>{this.state.course[0].section_name}</Button>
-      //   <Content open={isToggleOn}>
-      //     <div>
-      //       {course[0].contents[0].content_title}
-      //     </div>
-      //     <div>
-      //       {course[0].contents[1].content_title}
-      //     </div>
-      //   </Content>
+        // <Content open={isToggleOn}>
+        //   <div>
+        //     {course[0].contents[0].content_title}
+        //   </div>
+        //   <div>
+        //     {course[0].contents[1].content_title}
+        //   </div>
+        // </Content>
       //   <Button onClick={this.handleClick1}>Button2</Button>
       //   <Content open={isToggleOn1}>
       //     <p>
@@ -163,7 +140,14 @@ class CollapseBar extends React.Component {
       // </div>
       
       <div>
-        <CollapseButtons titles={this.state.course} />
+        <CourseContentHeader>
+          Course content
+          <ExpandButton onClick={this.handleClickAll}>
+            {isToggleAll ? 'Expand All' : 'Collapse All'}
+          </ExpandButton>
+        </CourseContentHeader>
+        <CollapseButtons titles={course} isToggleOn={isToggleOn} />
+        {/* <CourseContent data1={this.state.course} /> */}
       </div>
     );
   }
