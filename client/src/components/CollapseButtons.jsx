@@ -32,42 +32,60 @@ const Content = styled.div`
   } 
 `;
 
-const CollapseButtons = (props) => {
-  const names = props.titles;
+// const CollapseButtons = (props) => {
+//   const names = props.titles;
+//   const { isToggleOn, handleClick } = props;
 
-  return (
-    names.map((name, i) => {
-      return (
-        <div>
-          <Button>{name.section_name}</Button>
-          <div>
-            <Content open={true}>
-              {name.contents.map((content) => {
-                return (
-                  <p>{content.content_title}</p>
-                );
-              })}
-            </Content>
-          </div>
-        </div>
-      );
-    })
-  );
-};
+//   return (
+//     names.map((name, i) => {
+//       return (
+//         <div>
+//           <Button key={i} onClick={handleClick}>{name.section_name}</Button>
+//           <Content open={isToggleOn}>
+//             {name.contents.map((content) => {
+//               return (
+//                 <p>{content.content_title}</p>
+//               );
+//             })}
+//           </Content>
+//         </div>
+//       );
+//     })
+//   );
+// };
 
-// class CollapseButtons extends React.Component {
-//   constructor(props) {
-//     super(props)
-//   }
+//
+class CollapseButtons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isToggleOn: false,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-//   render () {
-//     const names = this.props.titles;
+  handleClick() {
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+  }
 
-//     return (
-//       names.map((name) =>
-//       <Button>{name.section_name}</Button>)
-//     );
-//   }
-// }
+  render() {
+    const { isToggleOn } = this.state;
+    const { name } = this.props;
+    return (
+      <div>
+        <Button onClick={this.handleClick}>{name.section_name}</Button>
+        <Content open={isToggleOn}>
+          {name.contents.map((content) => {
+            return (
+              <p>{content.content_title}</p>
+            );
+          })}
+        </Content>
+      </div>
+    );
+  }
+}
 
 export default CollapseButtons;
