@@ -30,12 +30,29 @@ const Content = styled.div`
   letter-spacing: .3px;
 
   p {
+    background-color: transparent;
+    font-weight: 400;
     flex-direction: column-reverse;
     display: flex;
     margin-left: 15px;
     width: 100%;
     cursor: pointer;
+    font-size: 15px;
   } 
+`;
+
+const ContentDiv = styled.div`
+  display: flex;
+  padding: 12px 30px 12px 43px;
+  background-color: #fff;
+  border: 1px solid #e8e9eb;
+  border-top: none;
+  color: #686f7a;
+  letter-spacing: .3px;
+  line-height: 1.33;
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 // const CollapseButtons = (props) => {
@@ -78,14 +95,16 @@ class CollapseButtons extends React.Component {
 
   render() {
     const { isToggleOn } = this.state;
-    const { name } = this.props;
+    const { name, clickAll } = this.props;
     return (
       <div>
         <Button onClick={this.handleClick}>{name.section_name}</Button>
-        <Content open={isToggleOn}>
+        <Content open={isToggleOn || clickAll}>
           {name.contents.map((content) => {
             return (
+              <ContentDiv>
               <p>{content.content_title}</p>
+              </ContentDiv>
             );
           })}
         </Content>
