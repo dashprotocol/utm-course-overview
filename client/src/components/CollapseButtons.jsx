@@ -9,7 +9,7 @@ const Button = styled.button`
   outline: none;
   text-align: left;
   padding: 15px 20px;
-  font-size: 18px;
+  font-size: 15px;
   cursor: pointer;
   transition:background-color 0.3s linear;
 
@@ -55,6 +55,14 @@ const ContentDiv = styled.div`
   }
 `;
 
+const Spans = styled.span`
+  display: inline-block;
+  margin: 4px;
+`;
+
+const PlusMinus = styled.p`
+  color:#007791;
+`;
 
 class CollapseButtons extends React.Component {
   constructor(props) {
@@ -77,12 +85,16 @@ class CollapseButtons extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClick}>
-          <span>
-            {isToggleOn ? '-' : '+'}
-          </span>
-          <span>
+          <Spans>
+            <PlusMinus>
+            <strong>{isToggleOn ? '-' : '+'}</strong>
+            </PlusMinus>
+          </Spans>
+          <Spans>
+          <strong>
           {name.section_name}
-          </span>
+          </strong>
+          </Spans>
         </Button>
         <Content open={isToggleOn || clickAll}>
           {name.contents.map((content) => {
