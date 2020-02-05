@@ -24,7 +24,7 @@ const Content = styled.div`
   opacity: ${(props) => (props.open ? '1' : '0')};
   max-height: ${(props) => (props.open ? '100%' : '0')};
   overflow: hidden;
-  padding: ${(props) => (props.open ? '0px' : '0 0px')};
+  padding: ${(props) => (props.open ? '0px' : '0 15px')};
   transition: all 0.3s;
   color: #686f7a;
   letter-spacing: .3px;
@@ -55,29 +55,7 @@ const ContentDiv = styled.div`
   }
 `;
 
-// const CollapseButtons = (props) => {
-//   const names = props.titles;
-//   const { isToggleOn, handleClick } = props;
 
-//   return (
-//     names.map((name, i) => {
-//       return (
-//         <div>
-//           <Button key={i} onClick={handleClick}>{name.section_name}</Button>
-//           <Content open={isToggleOn}>
-//             {name.contents.map((content) => {
-//               return (
-//                 <p>{content.content_title}</p>
-//               );
-//             })}
-//           </Content>
-//         </div>
-//       );
-//     })
-//   );
-// };
-
-//
 class CollapseButtons extends React.Component {
   constructor(props) {
     super(props);
@@ -98,7 +76,14 @@ class CollapseButtons extends React.Component {
     const { name, clickAll } = this.props;
     return (
       <div>
-        <Button onClick={this.handleClick}>{name.section_name}</Button>
+        <Button onClick={this.handleClick}>
+          <span>
+            {isToggleOn ? '-' : '+'}
+          </span>
+          <span>
+          {name.section_name}
+          </span>
+        </Button>
         <Content open={isToggleOn || clickAll}>
           {name.contents.map((content) => {
             return (

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import CollapseButtons from './CollapseButtons.jsx';
-// import CourseContent from './CourseContent.jsx';
+
 
 const ExpandButton = styled.button`
     font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
@@ -92,19 +92,18 @@ class CollapseBar extends React.Component {
     if (course === '') {
       return null;
     }
-    console.log(course);
     return (
       <div>
         <CurrContainer>
           <CourseLeft>
-        <CourseContentHeader>
-          Course content
-        </CourseContentHeader>
+            <CourseContentHeader>
+              Course content
+            </CourseContentHeader>
           </CourseLeft>
           <CourseRight>
-        <ExpandButton onClick={this.handleClickAll}>
-            {isToggleAll ? 'Expand All' : 'Collapse All'}
-          </ExpandButton>
+            <ExpandButton onClick={this.handleClickAll}>
+              {isToggleAll ? 'Collapse All' : 'Expand All'}
+            </ExpandButton>
           </CourseRight>
         </CurrContainer>
         {names.map((name) => {
@@ -112,8 +111,6 @@ class CollapseBar extends React.Component {
             <CollapseButtons name={name} clickAll={isToggleAll} handleClickAll={this.handleClickAll} />
           );
         })}
-        {/* <CollapseButtons titles={course} isToggleOn={isToggleOn} handleClick={this.handleClick} /> */}
-        {/* <CourseContent data1={this.state.course} /> */}
       </div>
     );
   }
