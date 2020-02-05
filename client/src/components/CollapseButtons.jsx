@@ -87,7 +87,7 @@ class CollapseButtons extends React.Component {
         <Button onClick={this.handleClick}>
           <Spans>
             <PlusMinus>
-              <strong>{isToggleOn ? '-' : '+'}</strong>
+              <strong>{isToggleOn || clickAll ? '-' : '+'}</strong>
             </PlusMinus>
           </Spans>
           <Spans>
