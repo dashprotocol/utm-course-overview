@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   getCourseData() {
-    axios.get('http://localhost:3000/test1')
+    axios.get('/test1')
       .then((response) => {
         this.setState({
           course: response.data,

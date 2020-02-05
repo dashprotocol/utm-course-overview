@@ -11,7 +11,7 @@ const ExpandButton = styled.button`
     cursor: pointer;
     display: inline-block;
     margin-right: 20px;
-  
+
   a {
     color: #007791;
     background-color: transparent;
@@ -20,7 +20,7 @@ const ExpandButton = styled.button`
   }
   * {
     box-sizing: border-box;
-  } 
+  }
 `;
 
 const CourseContentHeader = styled.h1`
@@ -67,7 +67,7 @@ class CollapseBar extends React.Component {
   }
 
   getCourseData() {
-    axios.get('http://localhost:3000/test1')
+    axios.get('/test1')
       .then((response) => {
         this.setState({
           course: response.data.course.sections,
