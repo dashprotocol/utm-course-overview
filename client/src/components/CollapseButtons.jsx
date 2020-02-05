@@ -34,6 +34,7 @@ const Content = styled.div`
     display: flex;
     margin-left: 15px;
     width: 100%;
+    cursor: pointer;
   } 
 `;
 
