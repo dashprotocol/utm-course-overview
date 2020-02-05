@@ -87,20 +87,20 @@ class CollapseButtons extends React.Component {
         <Button onClick={this.handleClick}>
           <Spans>
             <PlusMinus>
-            <strong>{isToggleOn ? '-' : '+'}</strong>
+              <strong>{isToggleOn ? '-' : '+'}</strong>
             </PlusMinus>
           </Spans>
           <Spans>
-          <strong>
-          {name.section_name}
-          </strong>
+            <strong>
+              {name.section_name}
+            </strong>
           </Spans>
         </Button>
         <Content open={isToggleOn || clickAll}>
           {name.contents.map((content) => {
             return (
               <ContentDiv>
-              <p>{content.content_title}</p>
+                <p>{content.content_title}</p>
               </ContentDiv>
             );
           })}
