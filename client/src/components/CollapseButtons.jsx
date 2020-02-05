@@ -24,7 +24,7 @@ const Content = styled.div`
   opacity: ${(props) => (props.open ? '1' : '0')};
   max-height: ${(props) => (props.open ? '100%' : '0')};
   overflow: hidden;
-  padding: ${(props) => (props.open ? '15px' : '0 15px')};
+  padding: ${(props) => (props.open ? '0px' : '0 0px')};
   transition: all 0.3s;
   color: #686f7a;
   letter-spacing: .3px;
