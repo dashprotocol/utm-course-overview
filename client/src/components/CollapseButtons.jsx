@@ -26,9 +26,14 @@ const Content = styled.div`
   overflow: hidden;
   padding: ${(props) => (props.open ? '15px' : '0 15px')};
   transition: all 0.3s;
+  color: #686f7a;
+  letter-spacing: .3px;
 
   p {
-    margin: 0;
+    flex-direction: column-reverse;
+    display: flex;
+    margin-left: 15px;
+    width: 100%;
   } 
 `;
 
