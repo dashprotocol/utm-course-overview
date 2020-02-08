@@ -67,7 +67,7 @@ class CollapseBar extends React.Component {
   }
 
   getCourseData() {
-    axios.get('/test1')
+    axios.get('http:localhost:3003/test1')
       .then((response) => {
         this.setState({
           course: response.data.course.sections,
